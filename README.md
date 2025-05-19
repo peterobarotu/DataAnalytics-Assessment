@@ -48,7 +48,7 @@ Identify accounts that have been inactive for over a year.
 * Filtered accounts that haven’t had a transaction in 365+ days.
 
 **Reasoning:**
-Grouping by user would combine all their accounts, hiding inactive ones. Instead, I grouped by account ID. Also, using `NOW()` could give wrong inactivity days if the data wasn’t recently updated. I used the dataset’s latest transaction date instead.
+Grouping by user would combine all their accounts, hiding inactive ones. Instead, I grouped by account ID. Also, using `NOW()` could give over inflated inactivity days if the data wasn’t recently updated. I used the dataset’s latest transaction date instead.
 
 **Challenges:**
 At first, I grouped by `owner_id`, which was wrong. One user could have active and inactive accounts. Grouping by `plan_id` fixed this.
